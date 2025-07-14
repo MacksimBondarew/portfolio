@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+    --purple: #c778dd;
+    --gray: #abb2bf;
+    --background: #282c33;
+    --yellow: #e5c07a;
+    --neptun: #55b6c2;
+    --blue: #62aeef;
+    --green: #98c379;
+    --red: #e06b74;
+    --white: #ffffff;
+    --font-fira-code-variable: "Fira Code", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-fira-code-variable);
+    color: var(--gray);
+    background-color: var(--background);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+@utility small-container {
+    @apply px-4 mx-auto max-w-[1366px];
+}
