@@ -1,6 +1,7 @@
 import React from "react";
-import { headerLinks } from "../data";
+import { headerLinks } from "../../data";
 import Link from "next/link";
+
 
 export default function HeaderLinks({ className }: { className?: string }) {
     return (

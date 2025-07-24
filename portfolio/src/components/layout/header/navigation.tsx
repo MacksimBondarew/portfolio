@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Icon } from "@/components/shared";
+import { Icon, SocialLinks } from "@/components/shared";
 import HeaderLinks from "./headerLinks";
-import { socialLinks } from "../data";
+import { socialLinks } from "../../data";
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -21,17 +21,7 @@ export default function Navigation() {
                 <div className="open">
                     <HeaderLinks className="mobile" />
                     <ul>
-                        {socialLinks.map(({ name, href, iconId }) => (
-                            <li key={name}>
-                                <a href={href}>
-                                    <Icon
-                                        width={64}
-                                        height={64}
-                                        iconId={iconId}
-                                    />
-                                </a>
-                            </li>
-                        ))}
+                        <SocialLinks />
                     </ul>
                 </div>
             )}

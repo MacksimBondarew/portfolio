@@ -38,15 +38,16 @@ button {
     @apply px-2 mx-auto max-w-[1366px];
 }
 
+.logo {
+    @apply flex items-center gap-2 cursor-pointer text-[var(--white)] transition fill-[var(--white)] duration-[var(--duration)];
+    &:hover {
+        @apply text-[var(--gray)] fill-[var(--gray)];
+    }
+}
+
 @layer layout {
     header {
         @apply small-container flex items-center h-12 md:h-[61px] justify-between flex-wrap;
-        .logo {
-            @apply cursor-pointer text-[var(--white)] transition fill-[var(--white)] duration-[var(--duration)];
-            &:hover {
-                @apply text-[var(--gray)] fill-[var(--gray)];
-            }
-        }
         a {
             @apply md:pt-8 md:pb-2 duration-[var(--duration)] transition flex items-center gap-2;
         }
@@ -63,6 +64,9 @@ button {
                 }
                 &:nth-of-type(2) {
                     @apply mt-auto justify-center;
+                    svg {
+                        @apply size-16;
+                    }
                 }
                 li {
                     a {
@@ -84,6 +88,21 @@ button {
                 &.open {
                     @apply translate-x-0;
                 }
+            }
+        }
+    }
+    footer {
+        @apply small-container flex justify-between py-8 gap-2 border-t border-[var(--white)];
+        p {
+            @apply text-[var(--white)] mt-4;
+        }
+        h4 {
+            @apply font-medium text-2xl text-[var(--white)];
+        }
+        div > ul {
+            @apply flex mt-3 gap-2;
+            svg {
+                @apply size-8;
             }
         }
     }
