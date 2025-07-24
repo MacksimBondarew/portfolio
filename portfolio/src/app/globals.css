@@ -11,6 +11,7 @@
     --red: #e06b74;
     --white: #ffffff;
     --font-fira-code-variable: "Fira Code", sans-serif;
+    --duration: 250ms;
 }
 
 *,
@@ -25,8 +26,65 @@ body {
     background-color: var(--background);
     scroll-behavior: smooth;
     overflow-x: hidden;
+    width: 100%;
+    font-size: 16px;
+}
+
+button {
+    cursor: pointer;
 }
 
 @utility small-container {
-    @apply px-4 mx-auto max-w-[1366px];
+    @apply px-2 mx-auto max-w-[1366px];
+}
+
+@layer layout {
+    header {
+        @apply small-container flex items-center h-12 md:h-[61px] justify-between flex-wrap;
+        .logo {
+            @apply cursor-pointer text-[var(--white)] transition fill-[var(--white)] duration-[var(--duration)];
+            &:hover {
+                @apply text-[var(--gray)] fill-[var(--gray)];
+            }
+        }
+        a {
+            @apply md:pt-8 md:pb-2 duration-[var(--duration)] transition flex items-center gap-2;
+        }
+
+        nav {
+            @apply flex;
+            ul {
+                @apply flex gap-8;
+                &.tablet {
+                    @apply hidden md:flex;
+                }
+                &.mobile {
+                    @apply flex-col;
+                }
+                &:nth-of-type(2) {
+                    @apply mt-auto justify-center;
+                }
+                li {
+                    a {
+                        @apply gap-0;
+                        &:hover {
+                            @apply text-[var(--white)];
+                        }
+                        span {
+                            @apply text-[var(--purple)];
+                        }
+                    }
+                }
+            }
+            button {
+                @apply md:hidden;
+            }
+            div {
+                @apply fixed grid translate-x-full transition-transform duration-250 ease-in-out top-[48px] pt-12 pb-20 bg-[var(--background)] font-medium text-[32px] left-0 w-lvw h-lvh z-10 px-4;
+                &.open {
+                    @apply translate-x-0;
+                }
+            }
+        }
+    }
 }
