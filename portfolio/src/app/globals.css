@@ -81,10 +81,13 @@ button {
                 }
             }
             button {
-                @apply md:hidden;
+                @apply md:hidden transition-transform duration-[var(--duration)] ease-in-out;
+                svg {
+                    @apply transition-all duration-[250ms] ease-in-out;
+                }
             }
             div {
-                @apply fixed grid translate-x-full transition-transform duration-250 ease-in-out top-[48px] pt-12 pb-20 bg-[var(--background)] font-medium text-[32px] left-0 w-lvw h-lvh z-10 px-4;
+                @apply fixed grid translate-x-full transition-transform duration-250 ease-in-out top-[47px] pt-12 pb-20 bg-[var(--background)] font-medium text-[32px] left-0 w-lvw h-lvh z-10 px-4;
                 &.open {
                     @apply translate-x-0;
                 }
